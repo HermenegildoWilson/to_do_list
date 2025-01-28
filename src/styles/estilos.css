@@ -1,0 +1,380 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'lato';
+    src: url(../../publico/Lato/Lato-Regular.ttf);
+}
+
+:root {
+    --corPendente: #f2afa59d;
+    --corTarefaPendente: #f2afa550;
+    --corTextoPendente: #5d2222;
+
+    --corExecucao: #cccccc9d;
+    --corTarefaExecucao: #cccccc50;
+    --corTextoExecucao: #333137;
+
+    --corConcluido: #a5e8f29d;
+    --corTarefaConcluido: #a5e8f250;
+
+    
+    --corRojo: #dea8da;
+    --corLaranja: #f2afa5;
+    --corVerde: #c3f2a5;
+    --corAzul: #a5e8f2;
+    --corAzulFraco: #a5e8f267;
+
+    --corCinza0: #efefef;
+    --corCinza1: #454545;
+    --corCinza2: #adadad4f;
+    --corCinza3: #cecece57;
+
+    --fontLato: 'lato';
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+
+    font-family: var(--fontLato);
+}
+
+body {
+    color: var(--corCinza1);
+    min-height: 100vh;
+
+    /*background: radial-gradient(at 31.23193213528698% 91.12910731030036%, #9fbef2 0%, #9fbef200 100%), radial-gradient(at 90.07472435370208% 83.49965436437668%, #dea8da 0%, #dea8da00 100%), radial-gradient(at 6.693996062499574% 18.980240421903215%, #ffb098 0%, #ffb09800 100%), radial-gradient(at 35.22724589642204% 26.914362777274647%, #bef29f 0%, #bef29f00 100%), radial-gradient(at 72.04283600567946% 70.69691430161984%, #9fbef2 0%, #9fbef200 100%), radial-gradient(at 13.197469869699773% 64.0337104091159%, #dea8da 0%, #dea8da00 100%);*/
+
+
+    background: radial-gradient(at 45.89905995821872% 12.467159760657998%, #f2afa5 0%, #f2afa500 100%), radial-gradient(at 33.68499803170933% 44.170967091310345%, #c3f2a5 0%, #c3f2a600 100%), radial-gradient(at 75.49770846066164% 12.187895713290953%, #a5e8f2 0%, #a6e8f200 100%) no-repeat;
+    background-size: cover;
+
+    position: relative;
+}
+
+
+.cabecalho, .rodape {
+    height: 15vh;
+    margin-bottom: 30px;
+    padding: 0 20px;
+
+    background: linear-gradient(to bottom , var(--corCinza3),  #cecece3a);
+    
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.rodape {
+    text-align: center;
+    margin-top: 20px;
+}
+
+h1 {
+    font-size: 1.8em;
+}
+h2 {
+    font-size: 1.4em;
+    text-align: center;
+}
+
+.conteudo {
+    min-height: 60vh;
+    padding: 0 20px;
+
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.descricao {
+    max-width: 70%;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+/* Botão de ação */
+.botao-acao {
+    padding: 12px;
+    margin-top: 22px;
+    font-size: 1em;
+
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+
+    background-color: var(--corVerde);
+    box-shadow: 0px 0px 8px 5px var(--corCinza3);
+
+    animation: animarBotao .5s infinite linear alternate;
+    transition: .4s;
+}
+
+.botao-acao:hover {
+    animation: animarBotao;
+    scale: 1.02;
+    transform: translateY(-3px);
+}
+@keyframes animarBotao {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-3px);
+    }
+}
+
+
+/* FORMULÁRIO */
+.formulario {
+    background: var(--corCinza2);
+    margin-top: 20px;
+
+    display: flex;
+    flex-flow: column;
+    gap: 12px;
+    justify-content: center;
+
+    padding: 20px;
+    min-width: 250px;
+    border-radius: 10px;
+}
+
+.campo {
+    display: flex;
+    flex-flow: column;
+    gap: 5px;
+    
+    justify-content: space-evenly;
+}
+
+.campo label {
+    padding-left: 10px;
+    font-size: .9em;
+}
+#sexo-campo{
+    padding-left: 15px;
+}
+
+.campo input, textarea {
+    flex: auto;
+
+    border-radius: 6px;
+    border: 4px solid transparent;
+    outline: none;
+    border: none;
+    font-size: .9em;
+    padding: 6px 12px;
+
+    transition: all .4s;
+}
+
+.campo input:focus, textarea:focus {
+    border-bottom: 1px solid var(--corAzulFraco);
+    box-shadow: 1px 3px 1px var(--corAzulFraco);
+}
+
+#botao-cadastrar,
+#botao-entrar,
+#botao-adicionar {
+    width: 50%;
+    padding: 7px;
+    font-size: .8em;
+    
+
+    align-self: center;
+}
+
+
+
+/* PÁGINA TO DO LIST */
+
+/* CAIXA ONDE FICA O PAINEl DE TAREFA E O TÍTULO  */
+.painel-tarefas {
+    background: var(--corCinza2);
+    width: 90vw;
+
+    display: flex;
+    flex-flow: wrap;
+    gap: 6px;
+
+    margin-top: 30px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+h3 {
+    width: 100%;
+    text-align: center;
+}
+
+/* ESTILIZAÇÃO DOS PAINEIS DE TAREFAS */
+.painel {
+    flex: auto;
+    overflow: hidden;
+
+    border-radius: 10px;
+    margin: 12px auto;
+
+    display: flex;
+    gap: 8px;
+    flex-flow: column;
+}
+
+/* ESTILIZAÇÃO DO CABEÇALHO DO PAINEL */
+.cabecalho-painel {
+    background: var(--corPendente);
+    width: 100%;
+    padding: 10px 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#pai-1 .tarefa {
+    background: var(--corTarefaPendente);
+}
+
+#pai-2 .cabecalho-painel {
+    background: var(--corExecucao);
+}
+#pai-2 .tarefa {
+    background: var(--corTarefaExecucao);
+}
+
+#pai-3 .cabecalho-painel {
+    background: var(--corConcluido);
+}
+#pai-3 .tarefa {
+    background: var(--corTarefaConcluido);
+}
+
+/* ESTILIZAÇÃO DO BOTÃO DE ADICIONAR TAREFA */
+.botao-add-tarefa,
+.close-tela {
+    background-color: var(--corCinza2);
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.linha {
+    background: var(--corCinza1);
+    display: inline-block;
+    height: 2px;
+    width: 44%;
+    border-radius: 10px;
+}
+
+.linha:nth-child(1) {
+    transform: translateY(2px);
+}
+
+.linha:nth-child(2) {
+    transform: rotate(90deg);
+}
+
+/* ESTILIZAÇÃO CONTEINER ONDE FICARÃO AS TAREFAS */
+.tarefas {
+    background: var(--corCinza2);
+    padding: 6px 10px;
+    border-radius: 0px 0px 10px 10px;
+    min-height: 10vh;
+
+    display: grid;
+    gap: 6px;
+}
+
+.tarefa {
+    background: var(--corAzulFraco);
+    border-radius: 8px;
+    padding: 8px 12px;
+    min-width: 100px;
+    color: black;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tarefa button {
+    color: black;
+
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    height: 22px;
+    width: 18px;
+
+
+}
+
+.eliminarTarefa {
+    background: url(../../publico/icone-delete.png) no-repeat center center;
+    background-size: contain;
+}
+
+
+/* TELA DE ADICIONAR TAREFA */
+.tela-add-tarefa {
+    background: #00000070;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+
+    transition: .8s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    gap: 10px;
+
+    transform: translateY(-100vh);
+    opacity: 0.6;
+    z-index: -1;
+}
+
+.tela-add-tarefa label {
+    color: whitesmoke;
+    font-weight: 600;
+}
+
+/*QUNADO A TELA DE ADICIONAR TAREFA ESTIVER VISIVEL */
+.tela-tarefa-visivel {
+    transform: translateY(0);
+    opacity: 1;
+    z-index: 1;
+}
+
+/* BOTÃO CANCELAR ADICIONAR */
+.btn-linha {
+    background: #ff0000;
+    display: inline-block;
+    height: 1px;
+    width: 90%;
+    border-radius: 10px;
+    transform-origin: center;
+}
+
+.btn-linha:nth-child(1) {
+    transform: rotate(-45deg);
+}
+
+.btn-linha:nth-child(2) {
+    transform: rotate(45deg);
+}

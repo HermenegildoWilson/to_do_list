@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Cadastro</title>
+    <link rel="stylesheet" href="../styles/estilos.css">
+    <link rel="shortcut icon" href="../../publico/logo.png" type="image/x-icon">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <h1>To do list</h1>
+    </header>
+
+    <!-- Página do formulário de cadastro -->
+    <main class="conteudo" id="conteudo-pagina-cadastro">
+        
+        <h2>Cadastre-se para utilizar a App</h2>
+        <!-- Enviamos os dados do formulário para a página principal -->
+        
+        <form action="todo-list.html" method="get" class="formulario" id="formulario-cadastro">
+            <p class="campo">
+                <label for="campoEmail">Emai: </label>
+                <input type="email" required name="email" id="campoEmail">
+            </p>
+
+            <p class="campo">
+                <label for="campoNome">Nome: </label>
+                <input type="text" required name="nome" id="campoNome">
+            </p>
+
+            <div class="campo">
+                <label>Sexo: </label>
+                <p id="sexo-campo">
+                    <span>
+                        <input type="radio" required value="Masculino" name="sexo" id="campoSexoM">
+                        <label for="campoSexoM">Masculino</label>
+                    </span>
+                    <span>
+                        <input type="radio" required value="Feminino" name="sexo" id="campoSexoF">
+                        <label for="campoSexoF">Feminino</label>
+                    </span>
+                </p>
+            </div>
+
+            <p class="campo">
+                <label for="campoSenha">Senha: </label>
+                <input type="password" required minlength="6" name="senha" id="campoSenha">
+            </p>
+
+            <input class="botao-acao" id="botao-cadastrar" type="submit" value="Cadastrar">
+        </form>
+    </main>
+
+    <footer class="rodape">
+        <p>&copy;Todos os direitos reservados Hermenegildo Panzo</p>
+    </footer>
+</body>
+</html>

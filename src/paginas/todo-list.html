@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+    <link rel="stylesheet" href="../styles/estilos.css">
+    <link rel="shortcut icon" href="../../publico/logo.png" type="image/x-icon">
+
+    <style>
+        .cabecalho {
+            justify-content: space-between;
+        }
+
+        .perfil {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .perfil img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TELA DE ADICIONAR TAREFA -->
+    <section class="tela-add-tarefa">
+        <abbr title="Cancelar">
+            <button class="close-tela">
+                <span class="btn-linha"></span>
+                <span class="btn-linha"></span>
+            </button>
+        </abbr>
+
+        <!-- FORMULÁRIO DE ADICIONAR TAREFA -->
+        <form method="get" class="formulario">
+            <p class="campo">
+                <label for="nomeTarefa">Nome da tarefa: </label>
+                <input type="nomeTarefa" required name="nomeTarefa" id="nomeTarefa">
+            </p>
+
+            <input class="botao-acao" id="botao-adicionar" type="submit" value="Adicionar">
+        </form>
+    </section>
+
+
+    <header class="cabecalho">
+        <h1>To do list</h1>
+    </header>
+
+    <main class="conteudo" id="conteudo-pagina-principal">
+        <h2></h2>
+
+        <!-- CAIXA ONDE FICAM OS DOIS PAINEIS DE TAREFA E O TÍTULO -->
+        <section class="painel-tarefas">
+
+            <h3>As suas tarefas</h3>
+
+            <!-- PRIMEIRO PAINEL DE TAREFAS -EM EXECUÇÃO  -->
+            <article class="painel" id="pai-1">
+
+                <!-- CABEÇALHO DO PAINEL-->
+                <div class="cabecalho-painel">
+                    <h4>Pendente</h4> <!-- TÍTULO/DESCRIÇÃO -->
+                    <abbr title="Adicionar Tarefa">
+                        <!-- BOTÃO ADICIONAR TAREFA-->
+                        <button id="1" class="botao-add-tarefa">
+                            <span class="linha"></span>
+                            <span class="linha"></span>
+                        </button>
+                    </abbr>
+                </div>
+                <!-- CONTEINER ONDE FICARÃO AS TAREFAS -->
+                <div class="tarefas">
+
+                </div>
+            </article>
+            <article class="painel" id="pai-2">
+
+                <!-- CABEÇALHO DO PAINEL-->
+                <div class="cabecalho-painel">
+                    <h4>Em execução</h4> <!-- TÍTULO/DESCRIÇÃO -->
+                    <abbr title="Adicionar Tarefa">
+                        <!-- BOTÃO ADICIONAR TAREFA-->
+                        <button id="2" class="botao-add-tarefa">
+                            <span class="linha"></span>
+                            <span class="linha"></span>
+                        </button>
+                    </abbr>
+                </div>
+                <!-- CONTEINER ONDE FICARÃO AS TAREFAS -->
+                <div class="tarefas">
+
+                </div>
+            </article>
+            <article class="painel" id="pai-3">
+
+                <!-- CABEÇALHO DO PAINEL-->
+                <div class="cabecalho-painel">
+                    <h4>Concluído</h4> <!-- TÍTULO/DESCRIÇÃO -->
+                    <abbr title="Adicionar Tarefa">
+                        <!-- BOTÃO ADICIONAR TAREFA-->
+                        <button id="3" class="botao-add-tarefa">
+                            <span class="linha"></span>
+                            <span class="linha"></span>
+                        </button>
+                    </abbr>
+                </div>
+                <!-- CONTEINER ONDE FICARÃO AS TAREFAS -->
+                <div class="tarefas">
+
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>&copy;Todos os direitos reservados Hermenegildo Panzo</p>
+    </footer>
+
+    <script src="../script/todo-list.js"></script>
+</body>
+
+</html>
