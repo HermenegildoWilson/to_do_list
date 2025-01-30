@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'lato';
-    src: url(../../publico/Lato/Lato-Regular.ttf);
+    src: url(../../public/Lato/Lato-Regular.ttf);
 }
 
 :root {
@@ -40,6 +40,9 @@
     list-style: none;
 
     font-family: var(--fontLato);
+}
+a {
+    color: var(--corCinza1);
 }
 
 body {
@@ -324,7 +327,7 @@ h3 {
 }
 
 .eliminarTarefa {
-    background: url(../../publico/icone-delete.png) no-repeat center center;
+    background: url(../../public/icone-delete.png) no-repeat center center;
     background-size: contain;
 }
 
