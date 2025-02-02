@@ -188,9 +188,7 @@ function criarTarefa(nome) {
     tarefa.innerHTML = `
     <h5>${nome}</h5>
     <p>
-        <abbr title="Deletar">
-            <button class="eliminarTarefa"></button>
-        </abbr>
+        <button class="eliminarTarefa"></button>
     </p>
     `;
     tarefa.classList.toggle('tarefa');

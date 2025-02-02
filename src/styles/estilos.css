@@ -41,9 +41,6 @@
 
     font-family: var(--fontLato);
 }
-a {
-    color: var(--corCinza1);
-}
 
 body {
     color: var(--corCinza1);
